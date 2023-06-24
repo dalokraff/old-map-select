@@ -5,5 +5,5 @@ local mod = get_mod("old-map-select")
 --based off/inspired by work done in:
 --https://github.com/RwAoNrDdOsM/map-selection
 
-mod:dofile("scripts/mods/old-map-select/mission_select")
-mod:dofile("scripts/mods/old-map-select/area_select")
+mod:dofile("scripts/mods/old-map-select/old_ui/mission_select")
+mod:dofile("scripts/mods/old-map-select/old_ui/area_select")

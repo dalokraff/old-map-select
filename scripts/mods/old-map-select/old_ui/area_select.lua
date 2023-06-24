@@ -1,6 +1,6 @@
 local mod = get_mod("old-map-select")
 
-local definitions = local_require("scripts/mods/old-map-select/area_select_definitions")
+local definitions = local_require("scripts/mods/old-map-select/old_ui/area_select_definitions")
 local widget_definitions = definitions.widgets
 local area_widget_definitions = definitions.area_widgets
 local scenegraph_definition = definitions.scenegraph_definition
@@ -52,7 +52,7 @@ end)
 --     return
 -- end)
 
-local area_select_settings = mod:dofile("scripts/mods/old-map-select/area_select_settings")
+local area_select_settings = mod:dofile("scripts/mods/old-map-select/old_ui/area_select_settings")
 
 mod:hook(StartGameWindowAreaSelection, "_setup_area_widgets", function(func, self)
     local sorted_area_settings = {}

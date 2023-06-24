@@ -16,9 +16,9 @@ local replacement_map = {
 }
 
 local replacement_settings = {}
-table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/area_settings/bogenhafen"))
-table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/area_settings/holly"))
-table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/area_settings/helmgart"))
+table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/old_ui/area_settings/bogenhafen"))
+table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/old_ui/area_settings/holly"))
+table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/old_ui/area_settings/helmgart"))
 local old_map_icon_size = 0.3
 
 
