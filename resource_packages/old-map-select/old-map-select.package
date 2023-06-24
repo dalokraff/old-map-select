@@ -1,0 +1,28 @@
+mod = [
+	"old-map-select"
+]
+
+package = [
+	"resource_packages/old-map-select/old-map-select"
+]
+
+lua = [
+	"scripts/mods/old-map-select/*"
+	"materials/*",
+]
+
+material = [
+  "materials/*"
+]
+
+unit = [
+  "units/*"
+]
+
+texture = [
+  "textures/*"
+] 
+
+wwise_dep = [
+  "wwise/*"
+]

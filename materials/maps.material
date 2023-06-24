@@ -1,0 +1,47 @@
+bogenhafen_map = {
+    material_contexts = {
+        surface_material = ""
+    }
+
+    shader = "gui:DIFFUSE_MAP"
+
+    textures = {
+        diffuse_map = "textures/bogenhafen_map"
+    }
+}
+
+ubersreik_map = {
+    material_contexts = {
+        surface_material = ""
+    }
+
+    shader = "gui:DIFFUSE_MAP"
+
+    textures = {
+        diffuse_map = "textures/ubersreik_map"
+    }
+}
+
+helmgart_map = {
+    material_contexts = {
+        surface_material = ""
+    }
+
+    shader = "gui:DIFFUSE_MAP"
+
+    textures = {
+        diffuse_map = "textures/helmgart_map"
+    }
+}
+
+reikland_map = {
+    material_contexts = {
+        surface_material = ""
+    }
+
+    shader = "gui:DIFFUSE_MAP"
+
+    textures = {
+        diffuse_map = "textures/reikland_map"
+    }
+}
