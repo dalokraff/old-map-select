@@ -6,6 +6,8 @@ local area_widget_definitions = definitions.area_widgets
 local scenegraph_definition = definitions.scenegraph_definition
 local animation_definitions = definitions.animation_definitions
 
+local area_select_settings = mod:dofile("scripts/mods/old-map-select/old_ui/area_select_settings")
+
 mod:hook(StartGameWindowAreaSelection, "create_ui_elements", function(func, self, params, offset)
 
     widget_definitions.window_background = UIWidgets.create_simple_texture("reikland_map", "window_background")
@@ -51,8 +53,6 @@ end)
 -- mod:hook(StartGameWindowAreaSelection, "draw_video", function(func, self, dt)
 --     return
 -- end)
-
-local area_select_settings = mod:dofile("scripts/mods/old-map-select/old_ui/area_select_settings")
 
 mod:hook(StartGameWindowAreaSelection, "_setup_area_widgets", function(func, self)
     local sorted_area_settings = {}
