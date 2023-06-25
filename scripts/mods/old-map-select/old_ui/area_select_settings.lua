@@ -17,8 +17,8 @@ local area_select_settings =  {
     },
     wizards = {
         offset = {
-            -250,
-            125,
+            -160,
+            -20,
             0
         },
         icon = "achievement_trophy_scorpion_complete_crater_veteran",
@@ -48,10 +48,9 @@ local area_select_settings =  {
         icon = "achievement_holly_complete_all_veteran_desc",
     },
     scorpion = {
-        
         offset = {
-            -85,
-            155,
+            -250,
+            125,
             0
         },
         icon = "achievement_trophy_scorpion_keep_standard_bearer_alive",
