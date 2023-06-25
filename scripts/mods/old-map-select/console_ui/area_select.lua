@@ -1,6 +1,6 @@
 local mod = get_mod("old-map-select")
 
-local definitions = local_require("scripts/mods/old-map-select/console_ui/area_select_definitions")
+local definitions = mod:dofile("scripts/mods/old-map-select/console_ui/area_select_definitions")
 local widget_definitions = definitions.widgets
 local area_widget_definitions = definitions.area_widgets
 local scenegraph_definition = definitions.scenegraph_definition
@@ -49,10 +49,30 @@ mod:hook(StartGameWindowAreaSelectionConsole, "create_ui_elements", function(fun
 end)
 
 
--- mod:hook(StartGameWindowAreaSelectionConsole, "_assign_video_player", function(func, self, material_name, video_player)
+--copy of vanilla function except one constant change to prevent fade in when swapping areas
+mod:hook(StartGameWindowAreaSelectionConsole, "_assign_video_player", function(func, self, material_name, video_player)
+    self:_destroy_video_widget()
 
---     return 
--- end)
+	local scenegraph_id = "video"
+	local video_widget_definition = UIWidgets.create_fixed_aspect_video(scenegraph_id, material_name)
+	local video_widget = UIWidget.init(video_widget_definition)
+	video_widget.content.video_content.video_player = video_player
+	local ui_top_renderer = self.ui_top_renderer
+	local world = ui_top_renderer.world
+
+	World.add_video_player(world, video_player)
+
+	self._video_widget = video_widget
+	self._video_created = true
+	self._draw_video_next_frame = true
+	local background_widget = self._widgets_by_name.background
+	local background_widget_style = background_widget.style
+	local color = background_widget_style.rect.color
+    --this is the problem function; i altered the foruth arg 255 -> 0
+	self._ui_animations.fade_in = UIAnimation.init(UIAnimation.function_by_time, color, 1, 0, 0, 1, math.easeOutCubic)
+
+    return 
+end)
 
 mod:hook(StartGameWindowAreaSelectionConsole, "_setup_area_widgets", function(func, self)
 
