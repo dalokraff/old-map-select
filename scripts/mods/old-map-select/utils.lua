@@ -334,7 +334,7 @@ OldMapUtils.create_level_widget = function (scenegraph_id, optional_offset, text
 	return widget
 end
 
-OldMapUtils.create_area_widget = function(index, scenegraph_definition, specific_scenegraph_id, area_widget_scale)
+OldMapUtils.create_area_widget = function(index, scenegraph_definition, specific_scenegraph_id, area_widget_scale, scenegraph_parent)
     local scenegraph_id = specific_scenegraph_id
 	local size = {
 		180*area_widget_scale,
@@ -345,7 +345,7 @@ OldMapUtils.create_area_widget = function(index, scenegraph_definition, specific
 		scenegraph_id = "area_root_" .. index
 		scenegraph_definition[scenegraph_id] = {
 			vertical_alignment = "center",
-			parent = "area_root",
+			parent = scenegraph_parent or "area_root",
 			horizontal_alignment = "center",
 			size = size,
 			position = {

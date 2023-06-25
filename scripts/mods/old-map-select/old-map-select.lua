@@ -7,3 +7,5 @@ local mod = get_mod("old-map-select")
 
 mod:dofile("scripts/mods/old-map-select/old_ui/mission_select")
 mod:dofile("scripts/mods/old-map-select/old_ui/area_select")
+
+mod:dofile("scripts/mods/old-map-select/console_ui/area_select")
