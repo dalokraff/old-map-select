@@ -27,5 +27,19 @@ definitions.scenegraph_definition.window_background = {
 	}
 }
 
+definitions.scenegraph_definition.area_title = {
+    vertical_alignment = "top",
+	parent = "window_background",
+	horizontal_alignment = "center",
+	size = {
+		600,
+		60
+	},
+	position = {
+		0,
+		75,
+		0
+	}
+}
 
 return definitions

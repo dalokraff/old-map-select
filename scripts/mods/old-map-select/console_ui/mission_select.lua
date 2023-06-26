@@ -21,6 +21,24 @@ table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/consol
 table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/console_ui/area_settings/helmgart"))
 local old_map_icon_size = 0.3
 
+local area_title_text_style = {
+	font_size = 36,
+	upper_case = true,
+	localize = false,
+	use_shadow = true,
+	word_wrap = true,
+	horizontal_alignment = "center",
+	vertical_alignment = "bottom",
+	dynamic_font_size = true,
+	font_type = "hell_shark_header",
+	text_color = Colors.get_color_table_with_alpha("font_title", 255),
+	offset = {
+		0,
+		0,
+		2
+	}
+}
+
 --this function is needed to resize level icon's button hotspot
 local scenegraph_level_icon_resize = function(resize)
     for i = 1, 20 do
@@ -46,9 +64,12 @@ local map_changes = function(area_name)
     local new_map = replacement_map[area_name]
     if new_map then
         widget_definitions.window_background = UIWidgets.create_simple_texture(new_map, "window_background")
+        local area_title = AreaSettings[area_name].display_name
+        widget_definitions.area_title = UIWidgets.create_simple_text(Localize(area_title), "area_title", nil, nil, area_title_text_style)
         scenegraph_level_icon_resize(old_map_icon_size)
     else 
         widget_definitions.window_background = nil
+        widget_definitions.area_title = nil
         scenegraph_level_icon_resize(1)
     end
 end
@@ -191,6 +212,8 @@ mod:hook(StartGameWindowMissionSelectionConsole, "_present_act_levels", function
                     content.icon = new_settings.level_image
                     offset[1] = new_settings.pos_x
 				    offset[2] = new_settings.pos_y
+
+                    act_widgets[#act_widgets] = nil
                 end
 
                 widget.style.glass.texture_size[1] = widget_scale*widget.style.glass.texture_size[1]
