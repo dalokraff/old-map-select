@@ -65,7 +65,6 @@ local map_changes = function(area_name)
     if new_map then
         widget_definitions.window_background = UIWidgets.create_simple_texture(new_map, "window_background")
         local area_title = AreaSettings[area_name].display_name
-        widget_definitions.area_title = UIWidgets.create_simple_text(Localize(area_title), "area_title", nil, nil, area_title_text_style)
         scenegraph_level_icon_resize(old_map_icon_size)
 
 
@@ -105,7 +104,6 @@ local map_changes = function(area_name)
         }, "area_map_corner_top_right")
     else 
         widget_definitions.window_background = nil
-        widget_definitions.area_title = nil
         scenegraph_level_icon_resize(1)
 
         widget_definitions.area_map_edge_top = nil

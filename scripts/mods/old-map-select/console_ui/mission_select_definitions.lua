@@ -31,21 +31,6 @@ definitions.scenegraph_definition.window_background = {
 	}
 }
 
-definitions.scenegraph_definition.area_title = {
-    vertical_alignment = "top",
-	parent = "window_background",
-	horizontal_alignment = "center",
-	size = {
-		600,
-		60
-	},
-	position = {
-		0,
-		75,
-		0
-	}
-}
-
 definitions.scenegraph_definition.info_window = {
     vertical_alignment = "top",
     parent = "window",
@@ -171,39 +156,5 @@ definitions.scenegraph_definition.area_map_corner_top_right = {
         5
     }
 }
-
--- definitions.widgets.area_map_edge_top = UIWidgets.create_tiled_texture("area_map_edge_top", "store_frame_small_side_01", {
---     128,
---     42
--- })
--- definitions.widgets.area_map_edge_bottom = UIWidgets.create_tiled_texture("area_map_edge_bottom", "store_frame_small_side_03", {
---     128,
---     42
--- })
--- definitions.widgets.area_map_edge_left = UIWidgets.create_tiled_texture("area_map_edge_left", "store_frame_small_side_04", {
---     42,
---     128
--- })
--- definitions.widgets.area_map_edge_right = UIWidgets.create_tiled_texture("area_map_edge_right", "store_frame_small_side_02", {
---     42,
---     128
--- })
-
--- definitions.widgets.area_map_corner_bottom_left = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", 0, {
---     75.5,
---     75.5
--- }, "area_map_corner_bottom_left")
--- definitions.widgets.area_map_corner_bottom_right = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", -math.pi / 2, {
---     75.5,
---     75.5
--- }, "area_map_corner_bottom_right")
--- definitions.widgets.area_map_corner_top_left = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", math.pi / 2, {
---     75.5,
---     75.5
--- }, "area_map_corner_top_left")
--- definitions.widgets.area_map_corner_top_right = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", math.pi, {
---     75.5,
---     75.5
--- }, "area_map_corner_top_right")
 
 return definitions
