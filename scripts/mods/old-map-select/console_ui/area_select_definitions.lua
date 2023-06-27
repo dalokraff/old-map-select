@@ -109,6 +109,120 @@ definitions.scenegraph_definition.area_map = {
 		}
 }
 
+definitions.scenegraph_definition.area_map_edge_top = {
+    vertical_alignment = "top",
+    parent = "area_map",
+    horizontal_alignment = "center",
+    size = {
+        large_window_size_map[1]-42,
+        42
+    },
+    position = {
+        0,
+        42,
+        4
+    }
+}
+definitions.scenegraph_definition.area_map_edge_bottom = {
+    vertical_alignment = "bottom",
+    parent = "area_map",
+    horizontal_alignment = "center",
+    size = {
+        large_window_size_map[1]-42,
+        42
+    },
+    position = {
+        0,
+        -42,
+        4
+    }
+}
+definitions.scenegraph_definition.area_map_edge_left = {
+    vertical_alignment = "center",
+    parent = "area_map",
+    horizontal_alignment = "left",
+    size = {
+        42,
+        770 -42
+    },
+    position = {
+        -42,
+        0,
+        4
+    }
+}
+definitions.scenegraph_definition.area_map_edge_right = {
+    vertical_alignment = "center",
+    parent = "area_map",
+    horizontal_alignment = "right",
+    size = {
+        42,
+        770 -42
+    },
+    position = {
+        42,
+        0,
+        4
+    }
+}
+
+definitions.scenegraph_definition.area_map_corner_bottom_left = {
+    vertical_alignment = "bottom",
+    parent = "area_map",
+    horizontal_alignment = "left",
+    size = {
+        151,
+        151
+    },
+    position = {
+        -6-42,
+        -6-42,
+        5
+    }
+}
+definitions.scenegraph_definition.area_map_corner_bottom_right = {
+    vertical_alignment = "bottom",
+    parent = "area_map",
+    horizontal_alignment = "right",
+    size = {
+        151,
+        151
+    },
+    position = {
+        6+42,
+        -6-42,
+        5
+    }
+}
+definitions.scenegraph_definition.area_map_corner_top_left = {
+    vertical_alignment = "top",
+    parent = "area_map",
+    horizontal_alignment = "left",
+    size = {
+        151,
+        151
+    },
+    position = {
+        -6-42,
+        6+42,
+        5
+    }
+}
+definitions.scenegraph_definition.area_map_corner_top_right = {
+    vertical_alignment = "top",
+    parent = "area_map",
+    horizontal_alignment = "right",
+    size = {
+        151,
+        151
+    },
+    position = {
+        6+42,
+        6+42,
+        5
+    }
+}
+
 definitions.scenegraph_definition.area_root = {
     vertical_alignment = "top",
     parent = "window",
@@ -130,7 +244,7 @@ definitions.scenegraph_definition.info_window = {
     horizontal_alignment = "center",
     size = info_window_size,
     position = {
-        info_window_size[1] - 25,
+        info_window_size[1],
         0,
         1
     }

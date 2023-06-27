@@ -8,7 +8,48 @@ local animation_definitions = definitions.animation_definitions
 
 local area_select_settings = mod:dofile("scripts/mods/old-map-select/console_ui/area_select_settings")
 
+local map_changes = function()
+        widget_definitions.area_map_edge_top = UIWidgets.create_tiled_texture("area_map_edge_top", "store_frame_small_side_01", {
+            128,
+            42
+        })
+        widget_definitions.area_map_edge_bottom = UIWidgets.create_tiled_texture("area_map_edge_bottom", "store_frame_small_side_03", {
+            128,
+            42
+        })
+        widget_definitions.area_map_edge_left = UIWidgets.create_tiled_texture("area_map_edge_left", "store_frame_small_side_04", {
+            42,
+            128
+        })
+        widget_definitions.area_map_edge_right = UIWidgets.create_tiled_texture("area_map_edge_right", "store_frame_small_side_02", {
+            42,
+            128
+        })
+        
+        widget_definitions.area_map_corner_bottom_left = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", 0, {
+            75.5,
+            75.5
+        }, "area_map_corner_bottom_left")
+        widget_definitions.area_map_corner_bottom_right = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", -math.pi / 2, {
+            75.5,
+            75.5
+        }, "area_map_corner_bottom_right")
+        widget_definitions.area_map_corner_top_left = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", math.pi / 2, {
+            75.5,
+            75.5
+        }, "area_map_corner_top_left")
+        widget_definitions.area_map_corner_top_right = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", math.pi, {
+            75.5,
+            75.5
+        }, "area_map_corner_top_right")
+end
+
+
+--copy of vanilla funciton so it uses my altered definitions
 mod:hook(StartGameWindowAreaSelectionConsole, "create_ui_elements", function(func, self, params, offset)
+
+	local area_name = self.parent:get_selected_area_name()
+    map_changes(area_name)
 
     local ui_scenegraph = UISceneGraph.init_scenegraph(scenegraph_definition)
 	self.ui_scenegraph = ui_scenegraph
@@ -74,6 +115,7 @@ mod:hook(StartGameWindowAreaSelectionConsole, "_assign_video_player", function(f
     return 
 end)
 
+--copy of the vanilla funciton except, added in some logic to handle on the spot replacement of the area map
 mod:hook(StartGameWindowAreaSelectionConsole, "_setup_area_widgets", function(func, self)
 
     local sorted_area_settings = {}

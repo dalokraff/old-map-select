@@ -67,13 +67,60 @@ local map_changes = function(area_name)
         local area_title = AreaSettings[area_name].display_name
         widget_definitions.area_title = UIWidgets.create_simple_text(Localize(area_title), "area_title", nil, nil, area_title_text_style)
         scenegraph_level_icon_resize(old_map_icon_size)
+
+
+
+        widget_definitions.area_map_edge_top = UIWidgets.create_tiled_texture("area_map_edge_top", "store_frame_small_side_01", {
+            128,
+            42
+        })
+        widget_definitions.area_map_edge_bottom = UIWidgets.create_tiled_texture("area_map_edge_bottom", "store_frame_small_side_03", {
+            128,
+            42
+        })
+        widget_definitions.area_map_edge_left = UIWidgets.create_tiled_texture("area_map_edge_left", "store_frame_small_side_04", {
+            42,
+            128
+        })
+        widget_definitions.area_map_edge_right = UIWidgets.create_tiled_texture("area_map_edge_right", "store_frame_small_side_02", {
+            42,
+            128
+        })
+        
+        widget_definitions.area_map_corner_bottom_left = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", 0, {
+            75.5,
+            75.5
+        }, "area_map_corner_bottom_left")
+        widget_definitions.area_map_corner_bottom_right = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", -math.pi / 2, {
+            75.5,
+            75.5
+        }, "area_map_corner_bottom_right")
+        widget_definitions.area_map_corner_top_left = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", math.pi / 2, {
+            75.5,
+            75.5
+        }, "area_map_corner_top_left")
+        widget_definitions.area_map_corner_top_right = UIWidgets.create_simple_rotated_texture("store_frame_small_corner", math.pi, {
+            75.5,
+            75.5
+        }, "area_map_corner_top_right")
     else 
         widget_definitions.window_background = nil
         widget_definitions.area_title = nil
         scenegraph_level_icon_resize(1)
+
+        widget_definitions.area_map_edge_top = nil
+        widget_definitions.area_map_edge_bottom = nil
+        widget_definitions.area_map_edge_left = nil
+        widget_definitions.area_map_edge_right = nil
+        
+        widget_definitions.area_map_corner_bottom_left = nil
+        widget_definitions.area_map_corner_bottom_right = nil
+        widget_definitions.area_map_corner_top_left = nil
+        widget_definitions.area_map_corner_top_right = nil
     end
 end
 
+--copy of vanilla funciton so it uses my altered definitions
 mod:hook(StartGameWindowMissionSelectionConsole, "_create_ui_elements", function(func, self, params, offset)
 	local area_name = self._parent:get_selected_area_name()
     map_changes(area_name)
@@ -129,6 +176,7 @@ mod:hook(StartGameWindowMissionSelectionConsole, "_create_ui_elements", function
     return
 end)
 
+--copy of the vanilla funciton except, added in some logic to handle on the spot replacement of missions that have maps
 mod:hook(StartGameWindowMissionSelectionConsole, "_present_act_levels", function(func, self, area_name)
 	local node_widgets = self._node_widgets
 	local statistics_db = self._statistics_db
