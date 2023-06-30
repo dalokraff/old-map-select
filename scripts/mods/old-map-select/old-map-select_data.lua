@@ -1,9 +1,13 @@
 local mod = get_mod("old-map-select")
 
 return {
-	name = "old-map-select",
+	name = "Maps for Mission Selection",
 	description = mod:localize("mod_description"),
 	is_togglable = false,
+
+	options = {
+		widgets = {},
+	},
 
 	custom_gui_textures = {
 		atlases = {
