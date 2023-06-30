@@ -13,12 +13,16 @@ local replacement_map = {
     bogenhafen = "bogenhafen_map",
     helmgart = "helmgart_map",
     holly = "ubersreik_map",
+	penny = "drachenfels_map",
+	karak_azgaraz = "dwarf_map",
 }
 
 local replacement_settings = {}
 table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/console_ui/area_settings/bogenhafen"))
 table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/console_ui/area_settings/holly"))
 table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/console_ui/area_settings/helmgart"))
+table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/console_ui/area_settings/penny"))
+table.merge(replacement_settings, mod:dofile("scripts/mods/old-map-select/console_ui/area_settings/karak_azgaraz"))
 local old_map_icon_size = 0.3
 
 local area_title_text_style = {
