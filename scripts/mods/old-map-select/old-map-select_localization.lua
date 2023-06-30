@@ -1,5 +1,8 @@
 return {
 	mod_description = {
-		en = "old-map-select description",
+		en = "Adds maps to the backgrounds of the mission selection menu",
 	},
+	["old-map-select"] = {
+		en = "Maps for Mission Selection",
+	}
 }

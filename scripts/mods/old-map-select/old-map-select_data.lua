@@ -3,18 +3,10 @@ local mod = get_mod("old-map-select")
 return {
 	name = "old-map-select",
 	description = mod:localize("mod_description"),
-	is_togglable = true,
+	is_togglable = false,
 
 	custom_gui_textures = {
 		atlases = {
-			-- {
-			-- 	"materials/maps",
-			-- 	"bogenhafen_map",
-			-- 	nil,
-			-- 	nil,
-			-- 	nil,
-			-- 	"bogenhafen_map",
-			-- },
 		},
 	
 		-- Injections
