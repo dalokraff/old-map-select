@@ -1,8 +1,8 @@
 local area_settings = {
     dlc_dwarf_beacons = {
         pos_x = -210,
-        pos_y = -300, 
-        -- scale = 0.3, 
+        pos_y = -300,
+        -- scale = 0.3,
         level_image = "achievement_wizards_trail_light_bonfires"
     },
     dlc_dwarf_exterior = {
@@ -17,6 +17,11 @@ local area_settings = {
         -- scale = 0.3,
         level_image = "achievement_dwarf_valaya_emote"
     },
+    dlc_dwarf_whaling = {
+        pos_x = -210+300,
+        pos_y = -300,
+        level_image = "achievement_dwarf_meta"
+    }
 }
 
 
