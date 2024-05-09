@@ -18,8 +18,8 @@ local area_settings = {
         level_image = "achievement_dwarf_valaya_emote"
     },
     dlc_dwarf_whaling = {
-        pos_x = -365+250,
-        pos_y = 50+100,
+        pos_x = -210+250+300,
+        pos_y = -300+100,
         level_image = "achievement_dwarf_meta"
     }
 }
